@@ -108,7 +108,7 @@
 						<strong>FizzBuzz:</strong> A Coding Challenge
 					</h1>
 					<p class="lead">
-						Given two values, display the numbers 1-100. When a
+						Given three values, to determine the number to count to. When a
 						number is divisible by the first value, display <strong>Fizz</strong>,
 						when the number is divisible by the second value,
 						display <strong>Buzz</strong>. And finally display <strong>Fizz-Buzz</strong> when the
@@ -124,7 +124,7 @@
 				<div class="col">
 					<h4>Enter Your Values Below</h4>
 					<form class="row g-3">
-						<div class="col-sm-6">
+						<div class="col-md-4">
 							<label for="fizzValue" class="form-label"
 								>Fizz Value</label
 							>
@@ -136,7 +136,7 @@
 								value="1"
 							/>
 						</div>
-						<div class="col-sm-6">
+						<div class="col-md-4">
 							<label for="buzzValue" class="form-label"
 								>Buzz Value</label
 							>
@@ -146,6 +146,18 @@
 								class="form-control"
 								placeholder="Buzz Value"
 								value="100"
+							/>
+						</div>
+						<div class="col-md-4">
+							<label for="stopValue" class="form-label"
+								>Stop Value (max: 5000)</label
+							>
+							<input
+								type="number"
+								id="stopValue"
+								class="form-control"
+								placeholder="Up to 5000"
+								value="5000"
 							/>
 						</div>
 						<div class="col-12 text-end">
