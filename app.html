@@ -80,7 +80,8 @@
 							</li>
 							<li class="nav-item">
 								<!-- CHANGE ME!!!!!!!! -->
-								<a class="nav-link" href="#">The Repo</a>
+								<a class="nav-link" href="https://github.com/fyardlest1/FizzBuzzChallenge"
+								target='_blank'>The Repo</a>
 							</li>
 							<li class="nav-item">
 								<a
@@ -103,7 +104,7 @@
 
 		<main class="container py-3">
 			<div class="row row-cols-1 row-cols-md-2">
-				<div class="col">
+				<div class="col-md-6">
 					<h1 class="display-5 border-bottom border-2">
 						<strong>FizzBuzz:</strong> A Coding Challenge
 					</h1>
@@ -113,8 +114,10 @@
 						when the number is divisible by the second value,
 						display <strong>Buzz</strong>. And finally display <strong>Fizz-Buzz</strong> when the
 						number is divisible by both values.
-					</p>
-					<h2 class="mt-5 border-bottom border-2">Instruction</h2>
+					</p>					
+				</div>
+				<div class="col-md-6">
+					<h2 class="border-bottom border-2">Instruction</h2>
 					<p>
 						Enter a first fizz value, a buzz value and the total number
 						you want to display. Press the FizzBuzz	button, 
@@ -124,10 +127,10 @@
 						try not to put too large a number in this field in order to avoid server slowness.
 					</p>
 				</div>
-				<div class="col">
-					<h4>Enter Your Values Below</h4>
+				<div class="col-md-12 d-flex flex-column">
+					<h2 class="border-bottom border-2 mb-3">Enter Your Values Below</h2>
 					<form class="row g-3">
-						<div class="col-sm-4">
+						<div class="col-sm-3">
 							<label for="fizzValue" class="form-label"
 								>Fizz Value</label
 							>
@@ -139,7 +142,7 @@
 								value="1"
 							/>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-3">
 							<label for="buzzValue" class="form-label"
 								>Buzz Value</label
 							>
@@ -151,7 +154,7 @@
 								value="1"
 							/>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-3">
 							<label for="stopValue" class="form-label"
 								>Stop Value (max: 5000)</label
 							>
@@ -163,7 +166,7 @@
 								value="5000"
 							/>
 						</div>
-						<div class="col-12 text-end">
+						<div class="col-md-3 align-self-end">
 							<button
 								id="btnSubmit"
 								type="button"
@@ -173,17 +176,17 @@
 							</button>
 						</div>
 					</form>
-					<!-- Form result -->
-					<h2 class="mt-5 border-bottom border-2">Results</h2>
-					<div class="table-responsive">
-						<table class="table table-striped table-striped-columns">
-							<tbody id="result">
-								<!-- result goes here -->
-								<!-- <tr><td></td></tr> -->
-							</tbody>
-						</table>
-					</div>
 				</div>
+			</div>
+			<!-- Form result -->
+			<h2 class="mt-4 border-bottom border-2">Results</h2>
+			<div class="table-responsive">
+				<table class="table table-striped table-striped-columns">
+					<tbody id="result">
+						<!-- result goes here -->
+						<!-- <tr><td></td></tr> -->
+					</tbody>
+				</table>
 			</div>
 		</main>
 
