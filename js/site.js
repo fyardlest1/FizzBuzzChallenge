@@ -7,8 +7,8 @@ function getValues() {
 	let stopValue = document.getElementById('stopValue').value;
 
 	// Convert the fizz and buzz values to numbers
-	// fizzValue = parseInt(fizzValue);
-	// buzzValue = parseInt(buzzValue);
+	fizzValue = parseInt(fizzValue);
+	buzzValue = parseInt(buzzValue);
 	stopValue = parseInt(stopValue);
 
 	// chek if the numbers are valid numbers
@@ -26,6 +26,14 @@ function getValues() {
 			icon: 'error',
 			title: 'Almost there!',
 			text: 'Fizz value, and buzzValue should not be greater than the Stop value.',
+			backdrop: false,
+		})
+	} else if (stopValue < 2 || stopValue > 5000) {
+		// tell the user it's wrong
+		Swal.fire({
+			icon: 'error',
+			title: 'Uh oh!',
+			text: 'Please enter a valid number between 2 and 5000.',
 			backdrop: false,
 		})
 	} else {
@@ -66,11 +74,13 @@ function displayFizzBuzz(values, fizzValue, buzzValue) {
 
 		// determine if the number is Fizz, Buzz, or FizzBuzz
 		if (number % fizzValue == 0 && number % buzzValue == 0) {
-			html += ' style="background-color: orange;">FizzBuzz'
+			html += ' style="background-color: #fd7e14;">FizzBuzz'
 		} else if (number % fizzValue == 0) {
 			html += '>' + 'Fizz'
 		} else if (number % buzzValue == 0) {
 			html += '>' + 'Buzz'
+		} else if (number % 2 == 0) {
+			html += ' style="background-color: #0dcaf0;">Even'
 		} else {
 			html += '>' + number
 		}

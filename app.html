@@ -116,9 +116,12 @@
 					</p>
 					<h2 class="mt-5 border-bottom border-2">Instruction</h2>
 					<p>
-						Enter a starting value and an end value. Press the
-						button, and the munbers in that range of values will
-						change to Fizz, Buzz, and FizzBuzz.
+						Enter a first fizz value, a buzz value and the total number
+						you want to display. Press the FizzBuzz	button, 
+						and the munbers in the stop range of values will
+						change to Fizz, Buzz, and FizzBuzz. <strong class='text-warning'>Warning!</strong> 
+						Even when the value of the stop value can reach up to 5000, 
+						try not to put too large a number in this field in order to avoid server slowness.
 					</p>
 				</div>
 				<div class="col">
@@ -145,7 +148,7 @@
 								id="buzzValue"
 								class="form-control"
 								placeholder="Buzz Value"
-								value="100"
+								value="1"
 							/>
 						</div>
 						<div class="col-sm-4">
@@ -156,7 +159,7 @@
 								type="number"
 								id="stopValue"
 								class="form-control"
-								placeholder="Up to 5000"
+								placeholder="Up to 1000"
 								value="5000"
 							/>
 						</div>
