@@ -20,33 +20,25 @@ function getValues() {
 			text: 'Please enter a valid number for fizz, buzz, and the stop values.',
 			backdrop: false,
 		})
-	} else if (fizzValue >= buzzValue) {
-		// tell the user it's wrong
+	} else if (fizzValue > stopValue || buzzValue > stopValue) {
+		// tell the user what to do
 		Swal.fire({
 			icon: 'error',
-			title: 'Uh oh!',
-			text: 'Please enter a valid number for both start and end values.',
-			backdrop: false,
-		})
-	} else if ((stopValue < 2) || (stopValue > 5000))  {
-		// tell the user it's wrong
-		Swal.fire({
-			icon: 'error',
-			title: 'Uh oh!',
-			text: 'Please enter a valid number between 2 and 5000.',
+			title: 'Almost there!',
+			text: 'Fizz value, and buzzValue should not be greater than the Stop value.',
 			backdrop: false,
 		})
 	} else {
 		let values = generateFizzBuzz(stopValue)
-		displayFizzBuzz(values)
+		displayFizzBuzz(values, fizzValue, buzzValue)
 	}
 }
 
 // step 2: get all the numbers in the range
-function generateFizzBuzz(stop) {
+function generateFizzBuzz(stopValue) {
 	let numbers = [];
 
-	for (let number = 1; number <= stop; number++) {
+	for (let number = 1; number <= stopValue; number++) {
 		numbers.push(number)
 	}
 	// return the list of numbers
@@ -60,33 +52,33 @@ function generateFizzBuzz(stop) {
 // }
 
 // step 3: display the numbers on the page
-function displayFizzBuzz(values) {
+function displayFizzBuzz(values, fizzValue, buzzValue) {
 	// - put the HTML on the page on the element with the result id
-	let resultsTable = document.getElementById('result');
+	let resultsTable = document.getElementById('result')
 	// clear the results table
-	resultsTable.innerHTML = '';
+	resultsTable.innerHTML = ''
 
 	// for each number in the range
 	for (let i = 0; i < values.length; i++) {
 		// create some html with the values
-		let number = values[i];
-		let html = '<tr><td';
+		let number = values[i]
+		let html = '<tr><td'
 
 		// determine if the number is Fizz, Buzz, or FizzBuzz
-		if ((number % 3 == 0) && (number % 5 == 0)) {
+		if (number % fizzValue == 0 && number % buzzValue == 0) {
 			html += ' style="background-color: orange;">FizzBuzz'
-		} else if (number % 3 == 0) {
-			html += '>' + 'Fizz';
-		} else if (number % 5 == 0) {
-			html += '>' + 'Buzz';
+		} else if (number % fizzValue == 0) {
+			html += '>' + 'Fizz'
+		} else if (number % buzzValue == 0) {
+			html += '>' + 'Buzz'
 		} else {
-			html += '>' + number;
+			html += '>' + number
 		}
 
 		html += '</td></tr>'
 
 		// display the results in the page
-		resultsTable.innerHTML += html;
+		resultsTable.innerHTML += html
 	}
 }
 
