@@ -7,8 +7,8 @@ function getValues() {
 	let stopValue = document.getElementById('stopValue').value;
 
 	// Convert the fizz and buzz values to numbers
-	fizzValue = parseInt(fizzValue);
-	buzzValue = parseInt(buzzValue);
+	// fizzValue = parseInt(fizzValue);
+	// buzzValue = parseInt(buzzValue);
 	stopValue = parseInt(stopValue);
 
 	// chek if the numbers are valid numbers
@@ -37,22 +37,27 @@ function getValues() {
 			backdrop: false,
 		})
 	} else {
-		let values = generateFizzBuzz(fizzValue, buzzValue)
+		let values = generateFizzBuzz(stopValue)
 		displayFizzBuzz(values)
 	}
-
 }
 
 // step 2: get all the numbers in the range
-function generateFizzBuzz(fizz, buzz) {
+function generateFizzBuzz(stop) {
 	let numbers = [];
-	for (let number = fizz; number <= buzz; number++) {
-		numbers.push(number);
-	}
 
+	for (let number = 1; number <= stop; number++) {
+		numbers.push(number)
+	}
 	// return the list of numbers
 	return numbers;
 }
+
+// JavaScript Range – How to Create an Array of Numbers with .from() in JS ES6
+// source: https://www.freecodecamp.org/news/javascript-range-create-an-array-of-numbers-with-the-from-method/
+// function getStopValue(stopValue) {	
+// 	return Array.from({ length: stopValue }, (value, index) => index + 1);
+// }
 
 // step 3: display the numbers on the page
 function displayFizzBuzz(values) {
@@ -85,7 +90,4 @@ function displayFizzBuzz(values) {
 	}
 }
 
-// step 4: get the stoped value from user input
-function getStopValue(value) {
-	
-}
+
