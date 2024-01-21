@@ -174,34 +174,55 @@
 							// step 3: display the numbers on the page
 							function displayFizzBuzz(values, fizzValue, buzzValue) {
 								// - put the HTML on the page on the element with the result id
-								let resultsTable = document.getElementById('result')
+								let divResult = document.getElementById('tblResult')
 								// clear the results table
-								resultsTable.innerHTML = ''
+								divResult.innerHTML = ''
+
+								// create a new &lt;table> element and a &lt;tbody> element
+								let tbl = document.createElement('table')
+								let tblBody = document.createElement('tbody')
+
+								// creating the table row
+								let tblRow = document.createElement('tr')
 
 								// for each number in the range
 								for (let i = 0; i < values.length; i++) {
-									// create some html with the values
 									let number = values[i]
-									let html = '&lt;tr>&lt;td'
+
+									// creating the table data
+									let tblData = document.createElement('td')
 
 									// determine if the number is Fizz, Buzz, or FizzBuzz
+									// by updating the content of tblData and not concatenating to it.
 									if (number % fizzValue == 0 && number % buzzValue == 0) {
-										html += ' style="background-color: #fd7e14;">FizzBuzz'
+										tblData.textContent = 'FizzBuzz'
+										tblData.style.backgroundColor = 'orange'
 									} else if (number % fizzValue == 0) {
-										html += '>' + 'Fizz'
+										tblData.textContent = 'Fizz'
+										tblData.style.backgroundColor = 'var(--fyard-gray-core)'
 									} else if (number % buzzValue == 0) {
-										html += '>' + 'Buzz'
+										tblData.textContent = 'Buzz'
+										tblData.style.backgroundColor = 'var(--fyard-gray-800)'
+										tblData.setAttribute('class', 'text-light')
 									} else if (number % 2 == 0) {
-										html += ' style="background-color: #0dcaf0;">Even'
+										tblData.textContent = 'Even'
 									} else {
-										html += '>' + number
+										tblData.textContent = number
 									}
 
-									html += '&lt;/td>&lt;/tr>'
-
-									// display the results in the page
-									resultsTable.innerHTML += html
+									// Now, put the &lt;td> at the end of the table row
+									tblRow.appendChild(tblData)
 								}
+
+								// add the row to the end of the table body
+								tblBody.appendChild(tblRow)
+
+								// put the &lt;tbody> in the &lt;table>
+								tbl.appendChild(tblBody)
+								// set the table attributes of the table
+								tbl.setAttribute('class', 'table text-center table-bordered ')
+								// appends &lt;table> into the HTML div element with the result id
+								divResult.appendChild(tbl)
 							}
                         </code>
                     </pre>
