@@ -92,6 +92,10 @@ function generateFizzBuzz(stopValue) {
 // 	}
 // }
 
+
+// Creating an HTML table dynamically on MDN
+// source: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces
+
 // step 3: display the numbers on the page
 function displayFizzBuzz(values, fizzValue, buzzValue) {
 	// - put the HTML on the page on the element with the result id
