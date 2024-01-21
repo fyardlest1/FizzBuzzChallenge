@@ -103,9 +103,6 @@ function displayFizzBuzz(values, fizzValue, buzzValue) {
 	// clear the results table
 	tableResult.innerHTML = ''
 
-	// creating the table row
-	let tblRow = document.createElement('tr')
-
 	// for each number in the range
 	for (let i = 0; i < values.length; i++) {
 		let number = values[i]
@@ -127,14 +124,20 @@ function displayFizzBuzz(values, fizzValue, buzzValue) {
 			tblData.setAttribute('class', 'text-light')
 		} else if (number % 2 == 0) {
 			tblData.textContent = 'Even'
+			tblData.style.backgroundColor = 'var(--fyard-pink-100)'
 		} else {
 			tblData.textContent = number
 		}
 
-		// Now, put the <td> at the end of the table row
-		tblRow.appendChild(tblData)
-	}
+		// creating a new table row every 5 items
+		if (i % 5 === 0) {
+			let tblRow = document.createElement('tr')
+			tableResult.appendChild(tblRow)
+		}
 
-	tableResult.appendChild(tblRow)
+		// Now, put the <td> at the end of the last table row
+		let newRow = tableResult.lastChild
+		newRow.appendChild(tblData)
+	}
 }
 
