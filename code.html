@@ -174,13 +174,9 @@
 							// step 3: display the numbers on the page
 							function displayFizzBuzz(values, fizzValue, buzzValue) {
 								// - put the HTML on the page on the element with the result id
-								let divResult = document.getElementById('tblResult')
+								let tableResult = document.getElementById('result')
 								// clear the results table
-								divResult.innerHTML = ''
-
-								// create a new &lt;table> element and a &lt;tbody> element
-								let tbl = document.createElement('table')
-								let tblBody = document.createElement('tbody')
+								tableResult.innerHTML = ''
 
 								// creating the table row
 								let tblRow = document.createElement('tr')
@@ -214,15 +210,7 @@
 									tblRow.appendChild(tblData)
 								}
 
-								// add the row to the end of the table body
-								tblBody.appendChild(tblRow)
-
-								// put the &lt;tbody> in the &lt;table>
-								tbl.appendChild(tblBody)
-								// set the table attributes of the table
-								tbl.setAttribute('class', 'table text-center table-bordered ')
-								// appends &lt;table> into the HTML div element with the result id
-								divResult.appendChild(tbl)
+								tableResult.appendChild(tblRow)
 							}
                         </code>
                     </pre>
