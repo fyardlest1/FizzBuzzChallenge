@@ -107,48 +107,40 @@ function displayFizzBuzz(values, fizzValue, buzzValue) {
 	let tbl = document.createElement('table')
 	let tblBody = document.createElement('tbody')
 
+	// creating the table row
+	let tblRow = document.createElement('tr')
+
 	// for each number in the range
 	for (let i = 0; i < values.length; i++) {
-		// creating the table row
-		let tblRow = document.createElement('tr')
+		let number = values[i]
 
 		// creating the table data
-		for (let j = 0; j < 5; j++) {
-			let tblData = document.createElement('td')
-			let currentNumber = i * 5 + j + 1			
+		let tblData = document.createElement('td')
 
-			// determine if the number is Fizz, Buzz, or FizzBuzz
-			// by update the content of tblData and not concatenate to it.
-			if (
-				currentNumber % fizzValue == 0 &&
-				currentNumber % buzzValue == 0
-			) {
-				tblData.textContent = 'FizzBuzz'
-				tblData.style.backgroundColor = 'orange'
-			} else if (currentNumber % fizzValue == 0) {
-				tblData.textContent = 'Fizz'
-				tblData.style.backgroundColor = 'var(--fyard-gray-core)'
-			} else if (currentNumber % buzzValue == 0) {
-				tblData.textContent = 'Buzz'
-				tblData.style.backgroundColor = 'var(--fyard-gray-800)'
-				tblData.setAttribute('class', 'text-light')
-			} else if (currentNumber % 2 == 0) {
-				tblData.textContent = 'Even'
-
-			} else {
-				tblData.textContent = currentNumber
-			}
-			// NOTE: The textContent property provides a way to manipulate the text content
-			// of an element without interpreting any HTML tags that might be present.
-			// It sets or retrieves the text content as plain text.
-
-			// Now, put the <td> at the end of the table row
-			tblRow.appendChild(tblData)
+		// determine if the number is Fizz, Buzz, or FizzBuzz
+		// by updating the content of tblData and not concatenating to it.
+		if (number % fizzValue == 0 && number % buzzValue == 0) {
+			tblData.textContent = 'FizzBuzz'
+			tblData.style.backgroundColor = 'orange'
+		} else if (number % fizzValue == 0) {
+			tblData.textContent = 'Fizz'
+			tblData.style.backgroundColor = 'var(--fyard-gray-core)'
+		} else if (number % buzzValue == 0) {
+			tblData.textContent = 'Buzz'
+			tblData.style.backgroundColor = 'var(--fyard-gray-800)'
+			tblData.setAttribute('class', 'text-light')
+		} else if (number % 2 == 0) {
+			tblData.textContent = 'Even'
+		} else {
+			tblData.textContent = number
 		}
 
-		// add the row to the end of the table body
-		tblBody.appendChild(tblRow)
+		// Now, put the <td> at the end of the table row
+		tblRow.appendChild(tblData)
 	}
+
+	// add the row to the end of the table body
+	tblBody.appendChild(tblRow)
 
 	// put the <tbody> in the <table>
 	tbl.appendChild(tblBody)
@@ -157,3 +149,4 @@ function displayFizzBuzz(values, fizzValue, buzzValue) {
 	// appends <table> into the HTML div element with the result id
 	divResult.appendChild(tbl)
 }
+
