@@ -74,3 +74,31 @@ footer .bi:hover {
 .app-logo {
     max-width: 450px;
 }
+
+/* FizzBuzz stiling */
+#fizzBuzzResults .col {
+    /* border: solid 1px var(--fyard-theme-core); */
+    text-align: center;
+    background-color: var(--fyard-theme-100);
+    padding: .25rem;
+}
+
+#fizzBuzzResults .Fizz {
+    background-color: var(--fyard-theme-600);
+    color: var(--fyard-theme-200);
+}
+
+#fizzBuzzResults .Buzz {
+    background-color: var(--fyard-theme-200);
+}
+
+#fizzBuzzResults .FizzBuzz {
+    background-color: var(--fyard-theme-700);
+    color: var(--fyard-theme-100);
+}
+
+#fizzBuzzResults .Even {
+    background-color: var(--fyard-theme-400);
+    color: var(--fyard-theme-100);
+}
+

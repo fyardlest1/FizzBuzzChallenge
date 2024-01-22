@@ -116,7 +116,7 @@
 						<strong>FizzBuzz:</strong> A Coding Challenge
 					</h1>
 					<p class="lead">
-						Given three values, to determine the number to count to. When a
+						Given three values, display the numbers 1-100 to determine the number to count to. When a
 						number is divisible by the first value, display <strong>Fizz</strong>,
 						when the number is divisible by the second value,
 						display <strong>Buzz</strong>. And finally display <strong>Fizz-Buzz</strong> when the
@@ -130,70 +130,50 @@
 						you want to display. Press the FizzBuzz	button, 
 						and the munbers in the stop range of values will
 						change to Fizz, Buzz, and FizzBuzz. <strong class='text-warning'>Warning!</strong> 
-						Even when the value of the stop value can reach up to 5000, 
+						Even when the value of the stop value can reach up to 3000, 
 						try not to put too large a number in this field in order to avoid server slowness.
 					</p>
 				</div>
-				<div class="col-md-12 d-flex flex-column">
-					<h2 class="border-bottom border-2 mb-3">Enter Your Values Below</h2>
-					<form class="row g-3">
-						<div class="col-sm-3">
-							<label for="fizzValue" class="form-label"
-								>Fizz Value</label
-							>
-							<input
-								type="number"
-								id="fizzValue"
-								class="form-control"
-								placeholder="Fizz Value"
-								value="3"
-							/>
-						</div>
-						<div class="col-sm-3">
-							<label for="buzzValue" class="form-label"
-								>Buzz Value</label
-							>
-							<input
-								type="number"
-								id="buzzValue"
-								class="form-control"
-								placeholder="Buzz Value"
-								value="5"
-							/>
-						</div>
-						<div class="col-sm-3">
-							<label for="stopValue" class="form-label"
-								>Stop Value (max: 5000)</label
-							>
-							<input
-								type="number"
-								id="stopValue"
-								class="form-control"
-								placeholder="Up to 1000"
-								value="25"
-							/>
-						</div>
-						<div class="col-md-3 align-self-end">
-							<button
-								id="btnSubmit"
-								type="button"
-								class="btn btn-primary"
-							>
-								FizzBuzz Results
-							</button>
-						</div>
-					</form>
-				</div>
+				<div class="col-md-12 mt-2">
+                    <div class="card">
+                        <div class="card-body container-fluid">
+                            <h3 class="border-bottom pb-2 mb-3">Fuzz it, or Buzz it!</h3>
+                            <form class="row row-cols-1 row-cols-sm-3 g-3">
+                                <div class="col">
+                                    <label for="fizzValue" class="form-label">Fizz Value</label>
+                                    <input type="number" class="form-control" id="fizzValue"
+                                    placeholder="Enter Fizz Value here" value="3" />
+                                </div>
+                                <div class="col">
+                                    <label for="buzzValue" class="form-label">Buzz Value</label>
+                                    <input type="number" class="form-control" id="buzzValue"
+                                    placeholder="Enter Buzz Value here" value="5" />
+                                </div>
+                                <div class="col">
+                                    <label for="stopValue" class="form-label">Stop Value (max: 3000)</label>
+                                    <input type="number" class="form-control" id="stopValue"
+                                    placeholder="Enter ending Value here" value="100" />
+                                </div>
+                                <div class="w-100 text-end">
+                                    <button
+                                        id="btnSubmit"
+                                        type="button"
+                                        class="btn btn-primary"
+                                    >
+                                        FizzBuzz Results
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 			</div>
 			<!-- Form result -->
-			<h2 class="mt-4 border-bottom border-2">Results</h2>
+			<h2 class="my-4 border-bottom border-2 pb-2">Results</h2>
 			<div class="table-responsive container" id="tblResult">
-				<table class="table text-center table-bordered">
-					<tbody id="result">
-						<!-- result goes here -->
-						<!-- <tr><td></td></tr> -->
-					</tbody>
-				</table>
+				<div class="row g-0 row-cols-5" id="fizzBuzzResults">
+                	<!-- Display result here -->
+				</div>
 			</div>
 		</main>
 
