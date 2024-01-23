@@ -86,9 +86,12 @@
 							</li>
 							<li class="nav-item">
 								<!-- CHANGE ME!!!!!!!! -->
-								<a class="nav-link" 
+								<a
+									class="nav-link"
 									href="https://github.com/fyardlest1/FizzBuzzChallenge"
-									target='_blank'>The Repo</a>
+									target="_blank"
+									>The Repo</a
+								>
 							</li>
 							<li class="nav-item">
 								<a
@@ -210,42 +213,66 @@
 				<!-- Code explanation -->
 				<div class="col-12 col-lg-4">
 					<h5>
-						Let's discuss the code responsible for generating the outcome of the FizzBuzz coding challenge.
+						Let's discuss the code responsible for generating the
+						outcome of the FizzBuzz coding challenge.
 					</h5>
-					<p>
-						...
-					</p>
-					<p>
-						What we need to do? ....
-					</p>
-					
+					<p>...</p>
+					<p>What we need to do? ....</p>
+
 					<h5>Each function has its own task</h5>
 					<h5>
 						<code>getValues()</code>
 					</h5>
 					<p>
-						The <code>getValues</code> function...
+						The <code>getValues</code> function, as you can see, is
+						designed to retrieve the values of the input fields of a
+						form, namely: fizzString, buzzString, and stopString
+						using for example <code>document.getElementById('fizzValue').value</code>, 
+						convert them to numbers: <code>fizzNumber</code>, <code>buzzNumber</code> and <code>stopNumber</code>
+						using the build in method <code>parseInt</code>, then call other
+						functions like <code>generateFizzBuzz</code> and <code>displayFizzBuzz</code> to
+						generate and display results related to FizzBuzz logic.
+						And in order to ensure the validity of the fields or at
+						least what precisely we must obtain from these fields by
+						of course using the <code>sweetalert2</code> library.
 					</p>
-					
+
 					<h5>
 						<code>generateFizzBuzz()</code>
 					</h5>
+					<p>The <code>generateFizzBuzz</code> function...</p>
 					<p>
-						The <code>generateFizzBuzz</code> function...
-					</p>
-					<p >
-						<em> When a function is invoked, the code inside the function is executed, and the return statement 
-						specifies the value that the function will produce as its result.</em>
+						<em>
+							When a function is invoked, the code inside the
+							function is executed, and the return statement
+							specifies the value that the function will produce
+							as its result.</em
+						>
 					</p>
 					<h5>
 						<code>displayFizzBuzz()</code>
 					</h5>
 					<p>
-						The <code>displayFizzBuzz</code> function...
+						The <code>displayFizzBuzz</code> function will allow us to display 
+						the result of our solution on the page using our document by calling 
+						the <code>fizzBuzzResult</code> <strong>id</strong> which represents 
+						the location or element in which we will have to insert the result, 
+						then we reset this same element for other displays. 
+						The '<strong>for</strong>' loop is used to iterate over a 'values' array, 
+						and generate HTML content corresponding to each element in the array. 
+						On each iteration of the loop, the current value in the 'values' array 
+						is stored in the 'value' variable. Then we create a &lt;div> tag 
+						<strong><em>- using what we call a template literals or template strings 
+						(delimited with backtick (<code>`</code>) characters) -</em></strong>
+						with a CSS class based on the value (represented by <code>${value}</code>) 
+						also displaying the value inside the tag. 
+						And finally, the generated HTML is added to the content of the HTML element 
+						referenced by '<strong>resultsDiv</strong>' which accumulates on each iteration of the loop.
 					</p>
-					<p>
-						...
-					</p>
+					<h5>
+						That's kind of cool, right?
+						<span class="fs-4">&#128526;</span>
+					</h5>
 				</div>
 			</div>
 		</main>
